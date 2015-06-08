@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<configuration packages="com.zensol.clojure.log">
+    <appenders>
+        <console name="console" target="SYSTEM_OUT">
+            <patternlayout pattern="{console} %c: %m%n"/>
+        </console>
+        <clojure name="clj">
+            <patternlayout pattern="{clojure} %c: %m%n"/>
+        </clojure>
+    </appenders>
+
+    <loggers>
+        <root level="trace">
+            <appenderref ref="console"/>
+            <appenderref ref="clj"/>
+        </root>
+    </loggers>
+</configuration>
