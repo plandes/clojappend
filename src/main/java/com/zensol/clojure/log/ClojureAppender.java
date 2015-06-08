@@ -15,8 +15,6 @@ import org.apache.logging.log4j.core.layout.PatternLayout;
 
 @Plugin(name = "Clojure", category = "Core", elementType = "appender", printObject = true)
 public class ClojureAppender extends AbstractAppender {
-    private void PrintWriter
-
     private ClojureAppender(String name, Filter filter, Layout<? extends Serializable> layout) {
         super(name, filter, layout);
     }
