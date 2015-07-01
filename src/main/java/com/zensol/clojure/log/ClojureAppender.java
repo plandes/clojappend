@@ -1,7 +1,9 @@
 package com.zensol.clojure.log;
 
+import java.io.PrintWriter;
 import java.io.Serializable;
 
+import clojure.lang.IFn;
 import com.zensol.clojure.util.ClojurePrint;
 import org.apache.logging.log4j.core.Filter;
 import org.apache.logging.log4j.core.Layout;
@@ -11,16 +13,38 @@ import org.apache.logging.log4j.core.config.plugins.Plugin;
 import org.apache.logging.log4j.core.config.plugins.PluginAttribute;
 import org.apache.logging.log4j.core.config.plugins.PluginElement;
 import org.apache.logging.log4j.core.config.plugins.PluginFactory;
-import org.apache.logging.log4j.core.layout.PatternLayout;
 
 @Plugin(name = "Clojure", category = "Core", elementType = "appender", printObject = true)
 public class ClojureAppender extends AbstractAppender {
-    private ClojureAppender(String name, Filter filter, Layout<? extends Serializable> layout) {
+    private static PrintWriter writer;
+    private static IFn printFn;
+
+
+    private ClojureAppender(String name, Filter filter,
+			    Layout<? extends Serializable> layout) {
         super(name, filter, layout);
     }
 
-    private ClojureAppender(String name, Filter filter, Layout<? extends Serializable> layout, boolean ignoreExceptions) {
+    private ClojureAppender(String name, Filter filter,
+			    Layout<? extends Serializable> layout,
+			    boolean ignoreExceptions) {
         super(name, filter, layout, ignoreExceptions);
+    }
+
+    public static PrintWriter getWriter() {
+	return writer;
+    }
+
+    public static void setWriter(PrintWriter writer) {
+	ClojureAppender.writer = writer;
+    }
+
+    public static IFn getPrintFn() {
+	return printFn;
+    }
+
+    public static void setPrintFn(IFn printFn) {
+	ClojureAppender.printFn = printFn;
     }
 
     @PluginFactory
@@ -45,7 +69,17 @@ public class ClojureAppender extends AbstractAppender {
     public void append(LogEvent logEvent) {
         Layout layout = getLayout();
 	String logLine = getLayout().toSerializable(logEvent).toString();
+	PrintWriter writer = ClojureAppender.writer;
 
-	ClojurePrint.print(logLine);
+	if (writer != null) {
+	    writer.print(logLine);
+	    writer.flush();
+	} else if (printFn == null) {
+	    ClojurePrint.print(logLine);
+	}
+
+	if (printFn != null) {
+	    printFn.invoke(logLine);
+	}
     }
 }
