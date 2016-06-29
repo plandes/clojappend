@@ -1,10 +1,10 @@
-package com.zensol.clojure.log;
+package com.zensols.clojure.log;
 
 import java.io.PrintWriter;
 import java.io.Serializable;
 
 import clojure.lang.IFn;
-import com.zensol.clojure.util.ClojurePrint;
+import com.zensols.clojure.util.ClojurePrint;
 import org.apache.logging.log4j.core.Filter;
 import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.LogEvent;

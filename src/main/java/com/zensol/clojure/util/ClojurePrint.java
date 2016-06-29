@@ -1,4 +1,4 @@
-package com.zensol.clojure.util;
+package com.zensols.clojure.util;
 
 import clojure.java.api.Clojure;
 import clojure.lang.IFn;

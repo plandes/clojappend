@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<configuration packages="com.zensol.clojure.log">
+<configuration packages="com.zensols.clojure.log">
     <appenders>
         <console name="console" target="SYSTEM_OUT">
             <patternlayout pattern="{console} %c: %m%n"/>

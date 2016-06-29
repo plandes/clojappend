@@ -1,4 +1,4 @@
-package com.zensol.clojure.log;
+package com.zensols.clojure.log;
 
 import static org.junit.Assert.*;
 import org.junit.Test;

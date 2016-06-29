@@ -1,4 +1,4 @@
-package com.zensol.clojure.util;
+package com.zensols.clojure.util;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
