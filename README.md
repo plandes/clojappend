@@ -28,7 +28,6 @@ Create a log4j2.xml in your `resources` or `test-resources` directory:
                status="OFF" monitorInterval="5">
     <appenders>
         <clojure name="repl">
-            <!--patternLayout pattern="%c{1}: %m%n"/-->
 	    <patternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.S}: %c{1}: %m%n"/>
         </clojure>
     </appenders>
@@ -46,6 +45,22 @@ Create a log4j2.xml in your `resources` or `test-resources` directory:
 Each time you invoke the REPL you need to give the logger the REPL's `*out*` reference:
 ```clojure
 user> (com.zensols.clojure.log.ClojureAppender/setWriter *out*)
+```
+
+This is a drag, so you could put this in your `~/.emacs.d/init.el` file:
+```lisp
+(defun clojappend-clojure-connected ()
+  (let ((buf (first
+	      (remove* nil (buffer-list)
+		       :test-not #'(lambda (a b)
+				     (string-match "^\*cider-repl" (buffer-name b)))))))
+    (save-excursion
+      (set-buffer buf)
+      (goto-char (point-max))
+      (insert "(com.zensol.clojures.log.ClojureAppender/setWriter *out*)")
+      (cider-repl-return))))
+
+(add-hook 'cider-connected-hook 'clojappend-clojure-connected)
 ```
 
 
