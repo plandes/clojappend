@@ -44,10 +44,18 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
 	<developerConnection>scm:git:git@github.com:plandes/clojappend.git</developerConnection>
     </scm>
 
+    <developers>
+	<developer>
+	    <name>Paul Landes</name>
+	    <email>landes@mailc.net</email>
+	</developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.app.compiler.version>1.7</project.app.compiler.version>
         <log4j.version>2.1</log4j.version>
+        <gpg.keyname>landes@mailc.net</gpg.keyname>
     </properties>
 
     <dependencies>
@@ -105,6 +113,7 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
 
     <build>
         <plugins>
+            <!-- compilation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -116,6 +125,7 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
                 </configuration>
             </plugin>
 
+            <!-- testing -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -126,6 +136,41 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
                         <log4j.configurationFile>file://${basedir}/src/test/resources/log4j2.xml</log4j.configurationFile>
                     </systemPropertyVariables>
                 </configuration>
+            </plugin>
+
+            <!-- attach sources -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- sign dists -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <keyname>${gpg.keyname}</keyname>
+                            <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

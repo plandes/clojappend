@@ -20,7 +20,8 @@ Using
 
 # Configuration
 
-Create a log4j2.xml in your `resources` or `test-resources` directory:
+Create a log4j2.xml in your `resources` or `test-resources` directory
+specifying the appender in the configuration element:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -40,6 +41,19 @@ Create a log4j2.xml in your `resources` or `test-resources` directory:
     </loggers>
 </configuration>
 ```
+
+This project includes slf4j and could conflict with other dependencies, in
+which case you'll want to exclude them (see below).  You also won't need this
+package outside the REPL, in which case you could add it as a `dev` profile.
+In your `project.clj`:
+```clojure
+(defproject example/project "0.1.0-SNAPSHOT"
+  :exclusions [org.slf4j/slf4j-log4j12
+               ch.qos.logback/logback-classic]
+  :profiles {:dev {:dependencies
+                   [com.zensols/clojappend "1.0.2"]}})
+```
+
 
 # REPL
 Each time you invoke the REPL you need to give the logger the REPL's `*out*` reference:
