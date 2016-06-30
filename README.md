@@ -80,4 +80,6 @@ This is a drag, so you could put this in your `~/.emacs.d/init.el` file:
 
 License
 -------
+Copyright © 2016 Paul Landes
+
 GNU Lesser General Public License, Version 3.0
