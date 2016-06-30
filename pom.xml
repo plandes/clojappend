@@ -47,7 +47,7 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
     <developers>
 	<developer>
 	    <name>Paul Landes</name>
-	    <email>landes@mailc.net</email>
+            <url>http://github.com/plandes</url>
 	</developer>
     </developers>
 
@@ -55,14 +55,13 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.app.compiler.version>1.7</project.app.compiler.version>
         <log4j.version>2.1</log4j.version>
-        <gpg.keyname>landes@mailc.net</gpg.keyname>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.clojure</groupId>
             <artifactId>clojure</artifactId>
-            <version>1.6.0</version>
+            <version>1.8.0</version>
         </dependency>
 
         <dependency>
