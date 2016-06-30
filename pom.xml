@@ -25,10 +25,9 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
     <artifactId>clojappend</artifactId>
     <version>1.0.2</version>
     <packaging>jar</packaging>
-
     <name>Clojure Appender</name>
-
     <description>Log4j2 Logger that appends using print and println.</description>
+    <url>https://github.com/plandes/clojappend</url>
 
     <licenses>
         <license>
