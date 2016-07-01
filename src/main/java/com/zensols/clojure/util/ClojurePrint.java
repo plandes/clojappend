@@ -19,6 +19,11 @@ package com.zensols.clojure.util;
 import clojure.java.api.Clojure;
 import clojure.lang.IFn;
 
+/**
+ * Utility to class to print a string with the <tt>println</tt> function.  This
+ * is called by {@link com.zensols.clojure.log.ClojureAppender} for Log4j2 log
+ * events when the writer isn't set.
+ */
 public class ClojurePrint {
     private static final String NAMESPACE = "clojure.core";
     private static final IFn printlnFunc = Clojure.var(NAMESPACE, "print");
