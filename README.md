@@ -5,15 +5,13 @@ Adding this package to your project enables
 [Log4j2](http://logging.apache.org/log4j/2.x/) to log to the
 [Cider](https://github.com/clojure-emacs/cider) REPL.
 
-
 Obtaining
 ---------
-In your `project.clj` file, add:
+In your `project.clj` file (probably in a development profile), add:
 
 ```clojure
-[com.zensols/clojappend "1.0.2"]
+[com.zensols/clojappend "1.0.3"]
 ```
-
 
 Using
 -----
@@ -29,7 +27,7 @@ specifying the appender in the configuration element:
                status="OFF" monitorInterval="5">
     <appenders>
         <clojure name="repl">
-	    <patternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.S}: %c{1}: %m%n"/>
+            <patternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.S}: %c{1}: %m%n"/>
         </clojure>
     </appenders>
 
@@ -51,9 +49,8 @@ In your `project.clj`:
   :exclusions [org.slf4j/slf4j-log4j12
                ch.qos.logback/logback-classic]
   :profiles {:dev {:dependencies
-                   [com.zensols/clojappend "1.0.2"]}})
+                   [com.zensols/clojappend "1.0.3"]}})
 ```
-
 
 # REPL
 Each time you invoke the REPL you need to give the logger the REPL's `*out*` reference:
@@ -65,9 +62,9 @@ This is a drag, so you could put this in your `~/.emacs.d/init.el` file:
 ```lisp
 (defun clojappend-clojure-connected ()
   (let ((buf (first
-	      (remove* nil (buffer-list)
-		       :test-not #'(lambda (a b)
-				     (string-match "^\*cider-repl" (buffer-name b)))))))
+          (remove* nil (buffer-list)
+               :test-not #'(lambda (a b)
+                     (string-match "^\*cider-repl" (buffer-name b)))))))
     (save-excursion
       (set-buffer buf)
       (goto-char (point-max))
@@ -77,6 +74,11 @@ This is a drag, so you could put this in your `~/.emacs.d/init.el` file:
 (add-hook 'cider-connected-hook 'clojappend-clojure-connected)
 ```
 
+Documentation
+-------------
+More [documentation](https://plandes.github.io/clojappend/):
+* [Javadoc](https://plandes.github.io/clojappend/apidocs/index.html)
+* [Dependencies](https://plandes.github.io/clojappend/dependencies.html)
 
 License
 -------
