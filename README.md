@@ -9,12 +9,9 @@ Obtaining
 ---------
 See [dependencies](https://plandes.github.io/clj-append/dependencies.html)
 
-
 Using
 -----
-
 # Configuration
-
 Create a log4j2.xml in your `resources` or `test-resources` directory
 specifying the appender in the configuration element:
 ```xml
