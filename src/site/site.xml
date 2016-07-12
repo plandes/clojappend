@@ -8,7 +8,7 @@
 
     <body>
         <links>
-            <item name="Source" href="https://github.com/plandes/clojappend"/>
+            <item name="Source" href="https://github.com/plandes/clj-append"/>
         </links>
 
         <menu name="Documentation">

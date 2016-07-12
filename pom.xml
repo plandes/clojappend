@@ -27,7 +27,7 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
     <packaging>jar</packaging>
     <name>Clojure Log4j2 Appender</name>
     <description>Log4j2 Logger that appends using print and println.</description>
-    <url>https://github.com/plandes/clojappend</url>
+    <url>https://github.com/plandes/clj-append</url>
 
     <licenses>
         <license>
@@ -38,9 +38,9 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
     </licenses>
 
     <scm>
-	<url>https://github.com/plandes/clojappend</url>
-	<connection>scm:git:git://github.com/plandes/clojappend.git</connection>
-	<developerConnection>scm:git:git@github.com:plandes/clojappend.git</developerConnection>
+	<url>https://github.com/plandes/clj-append</url>
+	<connection>scm:git:git://github.com/plandes/clj-append.git</connection>
+	<developerConnection>scm:git:git@github.com:plandes/clj-append.git</developerConnection>
     </scm>
 
     <developers>
