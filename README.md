@@ -7,11 +7,8 @@ Adding this package to your project enables
 
 Obtaining
 ---------
-In your `project.clj` file (probably in a development profile), add:
+See [dependencies](https://plandes.github.io/clj-append/dependencies.html)
 
-```clojure
-[com.zensols/clojappend "1.0.3"]
-```
 
 Using
 -----
@@ -49,7 +46,7 @@ In your `project.clj`:
   :exclusions [org.slf4j/slf4j-log4j12
                ch.qos.logback/logback-classic]
   :profiles {:dev {:dependencies
-                   [com.zensols/clojappend "1.0.3"]}})
+                   [com.zensols/clj-append "1.0.3"]}})
 ```
 
 # REPL
@@ -60,7 +57,7 @@ user> (com.zensols.clojure.log.ClojureAppender/setWriter *out*)
 
 This is a drag, so you could put this in your `~/.emacs.d/init.el` file:
 ```lisp
-(defun clojappend-clojure-connected ()
+(defun clj-append-clojure-connected ()
   (let ((buf (first
           (remove* nil (buffer-list)
                :test-not #'(lambda (a b)
@@ -71,14 +68,14 @@ This is a drag, so you could put this in your `~/.emacs.d/init.el` file:
       (insert "(com.zensol.clojures.log.ClojureAppender/setWriter *out*)")
       (cider-repl-return))))
 
-(add-hook 'cider-connected-hook 'clojappend-clojure-connected)
+(add-hook 'cider-connected-hook 'clj-append-clojure-connected)
 ```
 
 Documentation
 -------------
-More [documentation](https://plandes.github.io/clojappend/):
-* [Javadoc](https://plandes.github.io/clojappend/apidocs/index.html)
-* [Dependencies](https://plandes.github.io/clojappend/dependencies.html)
+More [documentation](https://plandes.github.io/clj-append/):
+* [Javadoc](https://plandes.github.io/clj-append/apidocs/index.html)
+* [Dependencies](https://plandes.github.io/clj-append/dependencies.html)
 
 License
 -------

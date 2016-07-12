@@ -22,10 +22,10 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zensols</groupId>
-    <artifactId>clojappend</artifactId>
-    <version>1.0.3</version>
+    <artifactId>clj-append</artifactId>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
-    <name>Clojure Appender</name>
+    <name>Clojure Log4j2 Appender</name>
     <description>Log4j2 Logger that appends using print and println.</description>
     <url>https://github.com/plandes/clojappend</url>
 
@@ -63,7 +63,7 @@ ZSCAL.  If not, see http://www.gnu.org/licenses/.
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.app.compiler.version>1.7</project.app.compiler.version>
+        <project.app.compiler.version>1.8</project.app.compiler.version>
         <log4j.version>2.1</log4j.version>
     </properties>
 
