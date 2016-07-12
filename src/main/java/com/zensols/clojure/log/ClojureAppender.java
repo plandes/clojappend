@@ -45,7 +45,7 @@ import org.apache.logging.log4j.core.config.plugins.PluginFactory;
  *
  * To use this class, you have to call it from the REPL.
  *
- * @see <a href="https://github.com/plandes/clojappend#repl">REPL configuration</a>
+ * @see <a href="https://github.com/plandes/clj-append#repl">REPL configuration</a>
  * @see com.zensols.clojure.util.ClojurePrint
  * @author Paul Landes
  */
