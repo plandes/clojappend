@@ -7,7 +7,7 @@ Adding this package to your project enables
 
 Obtaining
 ---------
-See [dependencies](https://plandes.github.io/clj-append/dependencies.html)
+See [dependencies](https://plandes.github.io/clj-append/dependency-info.html)
 
 Using
 -----
