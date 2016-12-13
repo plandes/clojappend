@@ -43,7 +43,7 @@ In your `project.clj`:
   :exclusions [org.slf4j/slf4j-log4j12
                ch.qos.logback/logback-classic]
   :profiles {:dev {:dependencies
-                   [com.zensols/clj-append "1.0.3"]}})
+                   [com.zensols/clj-append "1.0.5"]}})
 ```
 
 # REPL
