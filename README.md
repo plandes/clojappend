@@ -5,6 +5,10 @@ Adding this package to your project enables
 [Log4j2](http://logging.apache.org/log4j/2.x/) to log to the
 [Cider](https://github.com/clojure-emacs/cider) REPL.
 
+As of 6/22/2019 it appears newer versions of the Emacs Cider REPL no longer
+need this.
+
+
 Obtaining
 ---------
 See [dependencies](https://plandes.github.io/clj-append/dependency-info.html)
